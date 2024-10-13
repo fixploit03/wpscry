@@ -318,6 +318,8 @@ function wpscry(){
         buat_folder
         # Memanggil fungsi peringatan.
         peringatan
+        # Memanggil fungsi selamat_datang
+        selamat_datang
         # Memanggil fungsi mengatur_interface.
         mengatur_interface
         # Memanggil fungsi mengaktifkan_mode_monitor.
