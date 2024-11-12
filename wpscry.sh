@@ -1,6 +1,6 @@
 #!/bin/bash
 #--------------
-# wpscry - Serang otomatis jaringan Wi-Fi yang menggunakan vitur WPS.
+# wpscry - Serang otomatis jaringan Wi-Fi yang menggunakan fitur WPS.
 # Dibuat oleh fixploit03 
 #--------------
 # Jangan diotak-atik jing, GW cape bikinnya lu kira gampang?
