@@ -195,34 +195,6 @@ function memindai_jaringan_wps(){
         wash -i "${interface}"
 }
 
-# Fungsi untuk mengatur ESSID yang ingin diserang.
-function mengatur_essid(){
-        # Memasukkan ESSID yang ingin diserang.
-        while true; do
-                read -p "ESSID: " essid
-                # Kondisi jika ESSID tidak kosong.
-                if [[ ! -z "${essid}" ]]; then
-                        # Kondisi jika ESSID 'kembali'.
-                        if [[ "${essid}" == "kembali" ]]; then
-                                # Memanggil fungsi 'mengatur_interface'.
-                                mengatur_interface
-                                # Memanggil fungsi 'mengaktifkan_mode_monitor'.
-                                mengaktifkan_mode_monitor
-                                # Memanggil fungsi 'memindai_jaringan_wps'.
-                                memindai_jaringan_wps
-                        # Kondisi jika ESSID bukan 'kembali'.
-                        else
-                                echo "[+] ESSID: '${essid}'"
-                                break
-                        fi    
-                # Kondisi jika ESSID kosong.
-                else
-                        echo "[-] ESSID tidak boleh kosong."
-                        continue
-                fi
-        done
-}
-
 # Fungsi untuk mengatur BSSID yang ingin diserang.
 function mengatur_bssid(){
         # Memasukkan BSSID yang ingin diserang.
@@ -232,8 +204,12 @@ function mengatur_bssid(){
                 if [[ ! -z "${bssid}" ]]; then
                         # Kondisi jika BSSID 'kembali'.
                         if [[ "${bssid}" == "kembali" ]]; then
-                                # Memanggil fungsi 'mengatur_essid'.
-                                mengatur_essid
+                                # Memanggil fungsi 'mengatur_interface'.
+                                mengatur_interface
+                                # Memanggil fungsi 'mengaktifkan_mode_monitor'.
+                                mengaktifkan_mode_monitor
+                                # Memanggil fungsi 'memindai_jaringan_wps'.
+                                memindai_jaringan_wps
                         # Kondisi jika BSSID bukan 'kembali'.
                         else
                                 # Kondisi jika BSSID merupakan format yang valid.
@@ -326,8 +302,6 @@ function wpscry(){
         mengaktifkan_mode_monitor
         # Memanggil fungsi memindai_jaringan_wps.
         memindai_jaringan_wps
-        # Memanggil fungsi mengatur_essid.
-        mengatur_essid
         # Memanggil fungsi mengatur_bssid.
         mengatur_bssid
         # Memanggil fungsi mengatur_channel.
