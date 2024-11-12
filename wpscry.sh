@@ -113,7 +113,7 @@ function peringatan(){
                         exit 0
                 # Menangani kondisi ketika semua pernyataan if dan elif sebelumnya tidak terpenuhi.
                 else
-                        echo "[-] Masukan tidak valid. Harap masukkan 'iya' atau 'tidak'."
+                        echo "[-] Masukkan tidak valid. Harap masukkan 'iya' atau 'tidak'."
                         continue
                 fi
         done
