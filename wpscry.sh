@@ -65,14 +65,14 @@ function buat_folder(){
         # Memeriksa apakah folder dengan nama yang disimpan dalam variabel 'nama_folder' tidak ada.
         if [[ ! -d "${nama_folder}" ]]; then
                 # Membuat folder dengan nama yang disimpan dalam variabel 'nama_folder'.
-                echo -e "${b}[*] ${p}Membuat folder 'sesi'...${r}"
+                echo "[*] Membuat folder '${nama_folder}'..."
                 sleep 3
                 mkdir -p "${nama_folder}"
                 if [[ $? -eq 0 ]]; then
-                        echo -e "${h}[+] ${p}Folder '${nama_folder}' berhasil dibuat.${r}"
+                        echo "[+] Folder '${nama_folder}' berhasil dibuat."
                         sleep 3
                 else
-                        echo -e "${m}[-] ${p}Folder '${nama_folder}' gagal dibuat.${r}"
+                        echo "[-] Folder '${nama_folder}' gagal dibuat."
                         sleep 3
                 fi
                 # Mengubah izin folder yang disimpan dalam variabel 'nama_folder' menjadi 755.
